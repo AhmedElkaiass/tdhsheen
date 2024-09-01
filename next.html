@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <title>تم تدشين الفعاليات</title>
+
+    <!-- CSS  -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link
+      href="css/materialize.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <!-- <style>
+       .image-container {
+            width: 300px;
+            height: 300px;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            mix-blend-mode: multiply; 
+        }
+      img {
+        -webkit-mask-image: url("path-to-your-image.jpg");
+        mask-image: url("path-to-your-image.jpg");
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+        background-color: transparent;
+      }
+    </style> -->
+  </head>
+  <!-- <body class="next" id="next"> -->
+  <body
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: all ease-in-out 0.3s ;
+      background-color: #fff;
+    "
+  >
+    <h2 style="text-align: center; color: #168d5f" id="txt">
+      جارى التدشين <span id="points"></span>
+    </h2>
+    <img src="./img/done.png" style="display: none" id="doneImg" alt="" />
+    <!--  Scripts-->
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script>
+      var span = document.getElementById("points");
+      let counter = 0;
+      const interval = 5;
+      const updateCounter = () => {
+        if (counter <= 100) {
+          span.innerText = counter++;
+        } else {
+          clearInterval(counterInterval);
+          document.getElementById("txt").style.display = "none";
+          document.getElementById("doneImg").style.display = "block";
+        }
+      };
+      const counterInterval = setInterval(updateCounter, interval);
+      // function getRandomColor() {
+      //   const letters = "0123456789ABCDEF";
+      //   let color = "#";
+      //   for (let i = 0; i < 6; i++) {
+      //     color += letters[Math.floor(Math.random() * 16)];
+      //   }
+      //   return color;
+      // }
+
+      // // Function to change the background color of the body
+      // function changeBackgroundColor() {
+      //   document.body.style.backgroundColor = getRandomColor();
+      // }
+
+      // // Change background color every 1 second (1000 ms)
+      // setInterval(changeBackgroundColor, 1000);
+    </script>
+  </body>
+</html>
